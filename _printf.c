@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	{
 		if (*p != '%')
 		{
-			putchar(*p);
+			_putchar(*p);
 			num++;
 			continue;
 		}
@@ -29,17 +29,17 @@ int _printf(const char *format, ...)
 			case 's':
 				for (str = va_arg(arguments, char *); *str; str++)
 				{
-					putchar (*str);
+					_putchar(*str);
 					num++;
 				}
 				break;
 			case 'c':
 				x = va_arg(arguments, int);
-				printf("%c", x);
+				_putchar(x);
 				num++;
 				break;
 			default:
-				putchar(*p);
+				_putchar(*p);
 				num++;
 				break;
 		}
