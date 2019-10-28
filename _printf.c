@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			case 's':
 				for (str = va_arg(arguments, char *); *str; str++)
 				{
-					printf("%s", *str);
+					putchar (*str);
 					num++;
 				}
 				break;
