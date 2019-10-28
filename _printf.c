@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
 /**
@@ -10,9 +11,9 @@ int _printf(const char *format, ...)
 {
 	va_list arguments;
 	const char *p;
+	int num = 0;
 
 	va_start(arguments, format);
-	int num = 0;
 
 	for (p = format; *p; p++)
 	{
@@ -25,8 +26,11 @@ int _printf(const char *format, ...)
 		switch (*++p)
 		{
 			case 's':
+				if (num != '\0')
+				{
 				fun_string(arguments);
 				num++;
+				}
 				break;
 			case 'c':
 				fun_character(arguments);
