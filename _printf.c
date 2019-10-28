@@ -26,18 +26,24 @@ int _printf(const char *format, ...)
 		switch (*++p)
 		{
 			case 's':
-				if (num != '\0')
-				{
 				fun_string(arguments);
 				num++;
-				}
 				break;
 			case 'c':
 				fun_character(arguments);
 				num++;
 				break;
+			case '%':
+				_putchar('%');
+				format++;
+				num++;
+			case '\0':
+				break;
+			default:
+				_putchar(*p);
+				num++;
+				break;
 		}
-
 	}
 va_end(arguments);
 return (num);
