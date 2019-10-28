@@ -19,7 +19,7 @@ int fun_string(va_list arguments)
 }
 
 /**
- * fun_string - print character
+ * fun_character - print character
  * @arguments: va_list
  * Return: character
  */
