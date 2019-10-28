@@ -13,6 +13,9 @@ int _printf(const char *format, ...)
 	const char *p;
 	int num = 0;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(arguments, format);
 
 	for (p = format; *p; p++)
