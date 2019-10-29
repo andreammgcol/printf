@@ -31,3 +31,39 @@ int fun_character(va_list arguments)
 	_putchar(x);
 	return (x);
 }
+
+/**
+ * fun_integer - print integer and digit
+ * @arguments: va_list
+ * Return: int
+ */
+int fun_integer(va_list arguments)
+{
+	int i, d, length;
+	unsigned int cont;
+
+	i  = va_arg(arguments, int);
+	d = 1;
+	length = 0;
+
+	if (i < 0)
+	{
+		length = length + _putchar('-');
+		cont = i * -1;
+	}
+	else
+	{
+		cont = i;
+	}
+
+	while (cont / d > 9)
+	d = d * 10;
+
+	while (d != 0)
+	{
+		length = length + _putchar('0' + cont / d);
+		cont = cont % d;
+		d = d / 10;
+	}
+	return (i);
+}
