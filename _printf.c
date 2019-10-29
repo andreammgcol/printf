@@ -36,14 +36,13 @@ int _printf(const char *format, ...)
 				break;
 			case '%':
 				_putchar('%');
-				format++;
 				num++;
 			case '\0':
 				break;
 			default:
+				_putchar('%');
 				_putchar(*p);
-				num++;
-				break;
+				num += 2;
 		}
 	}
 va_end(arguments);
