@@ -45,6 +45,7 @@ int _printf(const char *format, ...)
 				num++;
 				break;
 			default:
+				_putchar('%');
 				_putchar(*p);
 				num++;
 				break;
