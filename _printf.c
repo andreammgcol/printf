@@ -36,6 +36,7 @@ int _printf(const char *format, ...)
 				break;
 			case '%':
 				_putchar('%');
+				format++;
 				num++;
 			case '\0':
 				break;
