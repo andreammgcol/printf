@@ -34,6 +34,9 @@ int _printf(const char *format, ...)
 				fun_character(arguments);
 				num++;
 				break;
+			case '%':
+				_putchar('%');
+				num++;
 			case '\0':
 				break;
 			default:
