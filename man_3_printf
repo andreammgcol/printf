@@ -1,0 +1,32 @@
+\" Manpage for _printf function
+.\" Contact Andrea Mendez or Andres Ballesteros to correct errors or typos.
+.TH man 8 "30 October 2019" "1.0" "_prtinf man page"
+.SH NAME
+_printf -- formatted output
+.SH SYNOPSIS
+_printf [arguments ...]
+.SH DESCRIPTION
+_printf function formats and prints its arguments, after the first, under control of the format.
+The prototype of _prinft works with a constant char pointer format which contains four types of objects: 
+strings, which are simply copied to standard output, character escape sequences which are copied to the standar output, digits and integer, which work with a
+loop to get the numbers and format specifications, each of which causes printing of the next successive argument.
+\n
+The format string is reused as often as necessary to satisfy the arguments. Any extra format specifications are evaluated with zero or the null string.
+.SH OPTIONS
+_printf validates each case to get the properly switch case as follow:
+\n
+s - get the string from the arguments
+\n
+c - get the character from the arguments
+\n
+i - get the integer from the arguments
+\n
+d - get the digits from the arguments
+\n
+default - get the other arguments of the input
+.SH SEE ALSO
+_PRINTF(1)
+.SH BUGS
+There is a bug when _printf tried to print special character like '%'. 
+.SH AUTHOR
+Andrea Mendez Mesias (1159@holbertonschool.com) and Andres Felipe Ballesteros (1194@holbertonschool.com)
