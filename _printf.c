@@ -1,4 +1,3 @@
-
 #include <stdlib.h>
 #include <stdarg.h>
 #include "holberton.h"
@@ -34,23 +33,17 @@ int _printf(const char *format, ...)
 				fun_character(arguments);
 				num++;
 				break;
-			case '%':
-				_putchar('%');
-				num++;
-			case '\0':
-				break;
 			case 'i':
 			case 'd':
 				fun_integer(arguments);
 				num++;
 				break;
 			default:
-				_putchar('%');
 				_putchar(*p);
-				num = num + 2;
+				num++;
 				break;
 		}
 	}
-va_end(arguments);
-return (num);
+	va_end(arguments);
+	return (num);
 }
