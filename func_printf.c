@@ -40,7 +40,7 @@ int fun_character(va_list arguments)
 int fun_integer(va_list arguments)
 {
 	int i, d, length;
-	unsigned int cont;
+	unsigned int x;
 
 	i  = va_arg(arguments, int);
 	d = 1;
@@ -49,20 +49,20 @@ int fun_integer(va_list arguments)
 	if (i < 0)
 	{
 		length = length + _putchar('-');
-		cont = i * -1;
+		x = i * -1;
 	}
 	else
 	{
-		cont = i;
+		x = i;
 	}
 
-	while (cont / d > 9)
+	while (x / d > 9)
 	d = d * 10;
 
 	while (d != 0)
 	{
-		length = length + _putchar('0' + cont / d);
-		cont = cont % d;
+		length = length + _putchar('0' + x / d);
+		x = x % d;
 		d = d / 10;
 	}
 	return (i);
