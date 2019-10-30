@@ -17,33 +17,35 @@ int _printf(const char *format, ...)
 	va_start(arguments, format);
 	for (p = format; *p; p++)
 	{
-		if (*p != '%')
+		if (*p == '%' && *p + 1 == '\0')
+			return (-1);
+		if (*p == '%' && *p + 1 == '%')
 		{
-			_putchar(*p);
-			num++;
+			_putchar(*p), num++;
 			continue;
 		}
-		switch (*++p)
+		else if (*p == '%' && *p + 1 != '%')
 		{
-			case 's':
-				fun_string(arguments);
-				num++;
-				break;
-			case 'c':
-				fun_character(arguments);
-				num++;
-				break;
-			case 'i':
-			case 'd':
-				fun_integer(arguments);
-				num++;
-				break;
-			default:
-				_putchar(*p);
-				num++;
-				break;
+			switch (*++p)
+			{
+				case 's':
+					fun_string(arguments), num++;
+					break;
+				case 'c':
+					fun_character(arguments), num++;
+					break;
+				case 'i':
+				case 'd':
+					fun_integer(arguments), num++;
+					break;
+				default:
+					_putchar(*p), num++;
+					break;
+			}
 		}
+		else
+			_putchar(*p), num++;
 	}
-	va_end(arguments);
-	return (num);
+va_end(arguments);
+return (num);
 }
