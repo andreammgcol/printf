@@ -36,7 +36,7 @@ int fun_character(va_list arguments)
 
 	x = va_arg(arguments, int);
 	_putchar(x);
-	return (x);
+	return (1);
 }
 
 /**
