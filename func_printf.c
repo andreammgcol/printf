@@ -72,5 +72,5 @@ int fun_integer(va_list arguments)
 		x = x % d;
 		d = d / 10;
 	}
-	return (i);
+	return (length);
 }
