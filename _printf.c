@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			switch (*++p)
 			{
 				case 's':
-					fun_string(arguments), num++;
+					num = fun_string(arguments);
 					break;
 				case 'c':
 					fun_character(arguments), num++;

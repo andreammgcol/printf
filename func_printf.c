@@ -10,12 +10,14 @@
 int fun_string(va_list arguments)
 {
 	char *str;
+	int i = 0;
 
 	for (str = va_arg(arguments, char *); *str; str++)
 	{
 		_putchar(*str);
+		i++;
 	}
-	return (*str);
+	return (i);
 }
 
 /**
