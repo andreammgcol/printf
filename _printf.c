@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 					num += fun_string(arguments);
 					break;
 				case 'c':
-					num += fun_character(arguments);
+					fun_character(arguments), num++;
 					break;
 				case 'i':
 				case 'd':
