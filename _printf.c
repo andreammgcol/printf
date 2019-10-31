@@ -35,14 +35,14 @@ int _printf(const char *format, ...)
 					num += fun_character(arguments);
 					break;
 				case '%':
-					putchar('%'), num++;
+					_putchar('%'), num++;
 					break;
 				case 'i':
 				case 'd':
 					fun_integer(arguments), num++;
 					break;
 				default:
-					putchar('%');
+					_putchar('%');
 					_putchar(*p), num += 2;
 					break;
 			}
