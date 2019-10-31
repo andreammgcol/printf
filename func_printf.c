@@ -12,9 +12,14 @@ int fun_string(va_list arguments)
 	char *str;
 	int i = 0;
 
-	for (str = va_arg(arguments, char *); *str; str++)
+	str = va_arg(arguments, char *);
+	if (str == NULL)
 	{
-		_putchar(*str);
+		str = "(null)";
+	}
+	for (; *str; str++)
+	{
+		putchar(*str);
 		i++;
 	}
 	return (i);

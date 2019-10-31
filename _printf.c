@@ -32,14 +32,18 @@ int _printf(const char *format, ...)
 					num += fun_string(arguments);
 					break;
 				case 'c':
-					fun_character(arguments), num++;
+					num += fun_character(arguments);
+					break;
+				case '%':
+					putchar('%'), num++;
 					break;
 				case 'i':
 				case 'd':
 					fun_integer(arguments), num++;
 					break;
 				default:
-					_putchar(*p), num++;
+					putchar('%');
+					_putchar(*p), num += 2;
 					break;
 			}
 		}
@@ -49,3 +53,4 @@ int _printf(const char *format, ...)
 va_end(arguments);
 return (num);
 }
+
