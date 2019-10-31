@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	const char *p;
 	int num = 0;
 
-	if (format == NULL)
+	if (format == NULL || *format == '%')
 		return (-1);
 	va_start(arguments, format);
 	for (p = format; *p; p++)
@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			switch (*++p)
 			{
 				case 's':
-					num = fun_string(arguments);
+					num += fun_string(arguments);
 					break;
 				case 'c':
 					fun_character(arguments), num++;
